@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.OrderMapper">
+
+    <select id="getAllOrder" resultType="mOrder">
+        select oId,uAccount,oDate from mOrder;
+    </select>
+
+    <select id="getOrder" resultType="mOrder" parameterType="Integer">
+        select oId,uAccount,oDate
+        from mOrder
+        where oId=#{oId};
+    </select>
+
+    <select id="getOrderWithAccount" resultType="mOrder" parameterType="String">
+        select oId,uAccount,oDate
+        from mOrder
+        where uAccount=#{uAccount};
+    </select>
+
+    <select id="addOrder" parameterType="mOrder">
+       into mOrder( oId, uAccount, oDate ) VALUE
+            (#{oId}, #{uAccount}, #{oDate});
+    </select>
+
+</mapper>

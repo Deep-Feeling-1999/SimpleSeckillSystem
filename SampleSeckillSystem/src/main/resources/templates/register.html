@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>spring项目</title>
+<!-- Bootstrap core CSS -->
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+<!-- Custom styles for this template -->
+<link th:href="@{/css/signin.css}" rel="stylesheet">
+</head>
+
+<body class="text-center">
+<div class="form-signin">
+
+    <form class="form-signin" th:action="@{/user/register}">
+        <h1 class="h3 mb-3 font-weight-normal" th:text="请注册"></h1>
+        <p th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
+        <label>
+            <!--添加name属性，给login控制器获取，用来确定身份-->
+            <input type="text" class="form-control" name="myUserName" th:placeholder="用户名" required=""
+                   autofocus="">
+        </label>
+        <label>
+            <!--添加name属性，给login控制器获取，用来确定身份-->
+            <input type="password" class="form-control" name="myPassword" th:placeholder="密码" required="">
+        </label>
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit">注册</button>
+    </form>
+
+</div>
+
+</body>
+
+</html>

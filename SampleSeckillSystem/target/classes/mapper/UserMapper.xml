@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.UserMapper">
+    <select id="getAllUser" resultMap="mUsers">
+        select uAccount,uPassWord
+        from mUser;
+    </select>
+
+    <select id="addUser" parameterType="mUser">
+        insert
+        into mUser( uAccount, uPassWord ) VALUE
+            (#{uAccount}, #{uPassword});
+    </select>
+
+    <select id="deleteUserWithAccount" parameterType="String">
+        delete from mUser
+        where uAccount=#{uAccount};
+    </select>
+
+    <select id="getUserWithAccount" parameterType="String" resultType="mUser">
+        select uAccount,uPassWord
+        from mUser
+        where uAccount=#{uAccount};
+    </select>
+
+    <select id="updateUser" resultType="mUser">
+        update mUser
+        set uPassword=#{uPassword}
+        where uAccount=#{uAccount};
+    </select>
+
+    <resultMap id="mUsers" type="mUser">
+        <result property="uAccount" column="uAccount"/>
+        <result property="uPassWord" column="uPassWord"/>
+    </resultMap>
+
+</mapper>

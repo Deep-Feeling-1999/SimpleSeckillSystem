@@ -1,0 +1,25 @@
+#spring:
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/springwebtest
+#    username: root
+#    password: 337+d7+d
+#    type: com.zaxxer.hikari.util.DriverDataSource
+#  thymeleaf:
+#    cache: false
+#  messages:
+#    basename: il8n.login
+#  #配置时间格式，此时2020/8/8会失效
+#  mvc:
+#    format:
+#      date: dd-MM-yyyy
+#
+#
+#
+#mybatis:
+#  type-aliases-package: com.examle.domain
+#  mapper-locations: classpath:mapper/*.xml
+#
+#
+#
+##server.servlet.context-path=/

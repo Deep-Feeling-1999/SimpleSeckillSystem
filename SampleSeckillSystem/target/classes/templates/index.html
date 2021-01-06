@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>spring项目</title>
+<!-- Bootstrap core CSS -->
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+<!-- Custom styles for this template -->
+<link th:href="@{/css/signin.css}" rel="stylesheet">
+</head>
+
+
+<body class="text-center">
+<div class="form-signin">
+
+    <form class="form-signin" th:action="@{/user/buy}">
+        <h1 class="h3 mb-3 font-weight-normal" th:text="请输入购买数量"></h1>
+        <label>
+            <!--添加name属性，给login控制器获取，用来确定身份-->
+            <input type="password" class="form-control" name="amount" th:placeholder="购买数量" required="">
+        </label>
+
+        <button class="btn btn-lg btn-primary btn-block" type="submit" style="background-color: gray">购买</button>
+    </form>
+</div>
+</body>
+
+</html>
